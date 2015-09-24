@@ -7,12 +7,33 @@
 //
 
 import UIKit
+import MapKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
+    
+    var locationManager = CLLocationManager()
+    var locations = [AnyObject]()
+    var currentLocation = CLLocation()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        //pedir autorizcion al usuario de ocupar localizacion
+        self.locationManager.requestAlwaysAuthorization()
+        
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if(CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedAlways){
+            self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            self.locationManager.startUpdatingLocation()
+            currentLocation = locationManager.location
+            locations.append(currentLocation)
+            
+            //instanciar al usuario
+            var usuario: Usuario = Usuario(Nombre: "Alberto", Password: "alt001")
+            var ubicacion = usuario.getUbicacion(locationManager, didUpdateLocations: locations)
+            println(ubicacion)
+
+        }
     }
 
     override func didReceiveMemoryWarning() {
