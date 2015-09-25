@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController{
+class ViewController: UIViewController,CLLocationManagerDelegate{
     
     var locationManager = CLLocationManager()
     var locations = [AnyObject]()
@@ -20,18 +20,19 @@ class ViewController: UIViewController{
         //pedir autorizcion al usuario de ocupar localizacion
         self.locationManager.requestAlwaysAuthorization()
         
-        self.locationManager.requestWhenInUseAuthorization()
+        //self.locationManager.requestWhenInUseAuthorization()
         
         if(CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedAlways){
-            self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            self.locationManager.startUpdatingLocation()
-            currentLocation = locationManager.location
-            locations.append(currentLocation)
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+            //currentLocation = locationManager.location
+            //locations.append(currentLocation)
             
             //instanciar al usuario
             var usuario: Usuario = Usuario(Nombre: "Alberto", Password: "alt001")
-            var ubicacion = usuario.getUbicacion(locationManager, didUpdateLocations: locations)
-            println(ubicacion)
+            //var ubicacion = usuario.getUbicacion(locationManager, didUpdateLocations: locations)
+            //println(ubicacion)
 
         }
     }
@@ -39,6 +40,14 @@ class ViewController: UIViewController{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        var location:CLLocation = (locations.last as? CLLocation)!
+        
+        print(location.coordinate.latitude)
+        print(" ")
+        println(location.coordinate.longitude)
     }
 
 

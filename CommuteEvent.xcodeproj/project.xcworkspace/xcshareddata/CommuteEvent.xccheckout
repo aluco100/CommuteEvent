@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0156CD63-EC7B-48B7-A32B-7F74694EC6EE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CommuteEvent</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>223B1B2BFDD3AE64396848142D148362D0182278</key>
+		<string>https://github.com/aluco100/CommuteEvent.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CommuteEvent.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>223B1B2BFDD3AE64396848142D148362D0182278</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/aluco100/CommuteEvent.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>223B1B2BFDD3AE64396848142D148362D0182278</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>223B1B2BFDD3AE64396848142D148362D0182278</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CommuteEvent</string>
+		</dict>
+	</array>
+</dict>
+</plist>
