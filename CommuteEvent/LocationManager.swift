@@ -9,17 +9,32 @@
 import Foundation
 import MapKit
 
-class LocationManager: CLLocationManager, CLLocationManagerDelegate{
-    private var locationManager : CLLocationManager = CLLocationManager()
+class GeoManager: CLLocationManager, CLLocationManagerDelegate{
+    private var coordinates : CLLocationCoordinate2D = CLLocationCoordinate2D()
+    
+    private var lManager = CLLocationManager()
     
     //constructor
     override init() {
-        self.locationManager.requestAlwaysAuthorization()
-        
+        super.init()
+        self.lManager.requestAlwaysAuthorization()
         if(CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedAlways){
-            self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            self.locationManager.startUpdatingLocation()
+            lManager.delegate = self
+            lManager.desiredAccuracy = kCLLocationAccuracyBest
+            lManager.startUpdatingLocation()
         }
         
+
+    }
+    
+    
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        let location:CLLocation = (locations.last as? CLLocation)!
+        self.coordinates = location.coordinate
+    }
+    
+    internal func getCoordinates()->CLLocationCoordinate2D{
+        return self.coordinates
     }
 }
