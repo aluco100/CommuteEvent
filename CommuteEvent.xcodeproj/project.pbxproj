@@ -158,15 +158,15 @@
 			children = (
 				0C7F50231BB4858A009EE477 /* AppDelegate.swift */,
 				0C61889B1BB78F4E00571EE6 /* authProvider.swift */,
+				0C7F50431BB48688009EE477 /* Usuario.swift */,
+				0C7F50471BB4A72F009EE477 /* Evento.swift */,
+				0C7F50451BB4A527009EE477 /* Configuracion.swift */,
 				0C7F50251BB4858A009EE477 /* ViewController.swift */,
 				0C5CAA0C1BB5B8EC0068349B /* LocationManager.swift */,
 				0C7F50271BB4858A009EE477 /* Main.storyboard */,
 				0C7F502A1BB4858A009EE477 /* Images.xcassets */,
 				0C7F502C1BB4858A009EE477 /* LaunchScreen.xib */,
 				0C7F50211BB4858A009EE477 /* Supporting Files */,
-				0C7F50431BB48688009EE477 /* Usuario.swift */,
-				0C7F50451BB4A527009EE477 /* Configuracion.swift */,
-				0C7F50471BB4A72F009EE477 /* Evento.swift */,
 			);
 			path = CommuteEvent;
 			sourceTree = "<group>";

@@ -12,12 +12,14 @@ import MapKit
 class Usuario{
     private var Nombre: String
     private var Password: String
+    private var location: GeoManager
     
     //constructor
     
      init(Nombre: String, Password: String){
         self.Nombre = Nombre
         self.Password = Password
+        self.location = GeoManager()
     }
     
     //funciones getter and setter
@@ -37,12 +39,8 @@ class Usuario{
         self.Password = Password
     }
     
-    internal func getUbicacion(Manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) ->CLLocationCoordinate2D{
-        let lastLocation = locations.last as! CLLocation
-        
-        let center = CLLocationCoordinate2D(latitude: lastLocation.coordinate.latitude, longitude: lastLocation.coordinate.longitude)
-        
-        return center
+    internal func getUbicacion() ->CLLocationCoordinate2D{
+        return location.getCoordinates()
     }
 
 }
