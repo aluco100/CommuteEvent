@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,18 +17,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOz-bb-uEb">
-                                <rect key="frame" x="224" y="314" width="153" height="30"/>
-                                <state key="normal" title="Obtener Coordenadas">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOz-bb-uEb">
+                                <rect key="frame" x="246" y="521" width="108" height="30"/>
+                                <state key="normal" title="Obtener Tweets">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="getCoordenadas:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xwv-JB-2nF"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="r1a-pq-YXW">
+                                <rect key="frame" x="33" y="33" width="541" height="441"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="3xZ-CG-GNK">
+                                        <rect key="frame" x="0.0" y="0.0" width="408" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3xZ-CG-GNK" id="tg9-rn-vyI">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="dOz-bb-uEb" secondAttribute="centerX" id="IYN-jJ-RFo"/>
+                            <constraint firstItem="dOz-bb-uEb" firstAttribute="top" secondItem="r1a-pq-YXW" secondAttribute="bottom" constant="47" id="Iun-KZ-z8f"/>
+                            <constraint firstItem="r1a-pq-YXW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="17" id="UsB-WS-f2q"/>
+                            <constraint firstAttribute="centerY" secondItem="dOz-bb-uEb" secondAttribute="centerY" constant="-236" id="bQV-Oy-AD6"/>
+                            <constraint firstAttribute="centerY" secondItem="r1a-pq-YXW" secondAttribute="centerY" constant="46.5" id="oDC-NQ-ZJt"/>
+                            <constraint firstAttribute="centerX" secondItem="r1a-pq-YXW" secondAttribute="centerX" constant="-3.5" id="z0f-xS-9yW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="r1a-pq-YXW" id="slK-g4-Cb2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

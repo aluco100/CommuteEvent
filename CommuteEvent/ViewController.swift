@@ -8,29 +8,45 @@
 
 import UIKit
 import MapKit
+import SwifteriOS
 
-class ViewController: UIViewController,CLLocationManagerDelegate{
+class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewDataSource, UITableViewDelegate{
     
+    @IBOutlet weak var tableView: UITableView!
+    var contador: Int = 0
+    var provider: Provider = Provider()
+    var tweets:[JSONValue] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
         //instanciar al usuario
         var usuario: Usuario = Usuario(Nombre: "Alberto", Password: "alt001")
         let ubicacion: CLLocationCoordinate2D = usuario.getUbicacion()
-        var provider: Provider = Provider()
-        provider.getAuth()
 
     }
 
     @IBAction func getCoordenadas(sender: AnyObject) {
-        
+        if(contador == 0){
+            provider.getAuth()
+        }
+        self.tableView.reloadData()
+        contador++;
         
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        tweets = provider.getTweets()
+        return tweets.count
     }
     
-    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: nil)
+        
+        cell.textLabel?.text = tweets[indexPath.row]["text"].string
+        
+        
+        return cell
+    }
 
 
 }
