@@ -21,6 +21,7 @@
 		0C7F50441BB48688009EE477 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7F50431BB48688009EE477 /* Usuario.swift */; };
 		0C7F50461BB4A527009EE477 /* Configuracion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7F50451BB4A527009EE477 /* Configuracion.swift */; };
 		0C7F50481BB4A72F009EE477 /* Evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7F50471BB4A72F009EE477 /* Evento.swift */; };
+		0CA946871BC6FF51000FC133 /* TweetsListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA946861BC6FF51000FC133 /* TweetsListener.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		0C7F50431BB48688009EE477 /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		0C7F50451BB4A527009EE477 /* Configuracion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuracion.swift; sourceTree = "<group>"; };
 		0C7F50471BB4A72F009EE477 /* Evento.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evento.swift; sourceTree = "<group>"; };
+		0CA946861BC6FF51000FC133 /* TweetsListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsListener.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				0C7F50471BB4A72F009EE477 /* Evento.swift */,
 				0C7F50451BB4A527009EE477 /* Configuracion.swift */,
 				0C7F50251BB4858A009EE477 /* ViewController.swift */,
+				0CA946861BC6FF51000FC133 /* TweetsListener.swift */,
 				0C5CAA0C1BB5B8EC0068349B /* LocationManager.swift */,
 				0C7F50271BB4858A009EE477 /* Main.storyboard */,
 				0C7F502A1BB4858A009EE477 /* Images.xcassets */,
@@ -336,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C7F50261BB4858A009EE477 /* ViewController.swift in Sources */,
+				0CA946871BC6FF51000FC133 /* TweetsListener.swift in Sources */,
 				0C7F50461BB4A527009EE477 /* Configuracion.swift in Sources */,
 				0C5CAA0D1BB5B8EC0068349B /* LocationManager.swift in Sources */,
 				0C7F50241BB4858A009EE477 /* AppDelegate.swift in Sources */,

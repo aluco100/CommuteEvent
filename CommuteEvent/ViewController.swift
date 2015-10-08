@@ -6,16 +6,18 @@
 //  Copyright (c) 2015 Alfredo Luco. All rights reserved.
 //
 
+
 import UIKit
 import MapKit
 import SwifteriOS
 
-class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewDataSource, UITableViewDelegate{
+class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewDataSource, UITableViewDelegate,TweetsListener{
     
     @IBOutlet weak var tableView: UITableView!
     var contador: Int = 0
     var provider: Provider = Provider()
     var tweets:[JSONValue] = []
+    var hashtags:[String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -25,23 +27,33 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
         let ubicacion: CLLocationCoordinate2D = usuario.getUbicacion()
 
     }
+    
+    func onTweetsReload(tweets: [JSONValue]) -> Void{
+        dispatch_async(dispatch_get_main_queue()) {
+            self.tableView.reloadData()
+        }
+    }
 
     @IBAction func getCoordenadas(sender: AnyObject) {
         if(contador == 0){
             provider.getAuth()
+            provider.registerTweetsListener(self)
         }
-        self.tableView.reloadData()
+        
         contador++;
         
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tweets = provider.getTweets()
+        hashtags = provider.getHashtags()
+        //return hashtags.count
         return tweets.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: nil)
         
+        //cell.textLabel?.text = hashtags[indexPath.row]
         cell.textLabel?.text = tweets[indexPath.row]["text"].string
         
         
