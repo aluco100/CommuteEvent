@@ -18,6 +18,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
     var provider: Provider = Provider()
     var tweets:[JSONValue] = []
     var hashtags:[String] = []
+    var users:[String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -46,6 +47,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tweets = provider.getTweets()
         hashtags = provider.getHashtags()
+        users = provider.getUsers()
         //return hashtags.count
         return tweets.count
     }
@@ -54,8 +56,8 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
         let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: nil)
         
         //cell.textLabel?.text = hashtags[indexPath.row]
-        cell.textLabel?.text = tweets[indexPath.row]["text"].string
-        
+        //cell.textLabel?.text = tweets[indexPath.row]["text"].string
+        cell.textLabel?.text = users[indexPath.row]
         
         return cell
     }

@@ -84,7 +84,7 @@ class Provider{
     
     internal func getHashtags()->[String]{
         if(self.tweets.count < 1){
-            return [];
+            return []
         }
         for i in 0...self.tweets.count - 1 {
             var t = self.tweets[i]["entities"]["hashtags"]
@@ -105,10 +105,16 @@ class Provider{
             return []
         }
         for i in 0...self.tweets.count - 1{
-            if(self.tweets[i]["user_mentions"]["name"] != nil){
-                self.users.append(self.tweets[i]["user_mentions"]["name"].string!)
+            var u = self.tweets[i]["entities"]["user_mentions"]
+            var count = u.array!.count
+            if(count > 0)
+            {
+                for j in 0...count - 1 {
+                    self.users.append(u.array![j]["name"].string!)
+                }
             }
-        }
+            
+    }
     return self.users
     }
     
