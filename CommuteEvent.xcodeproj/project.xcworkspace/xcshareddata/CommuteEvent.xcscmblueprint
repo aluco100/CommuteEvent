@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "223B1B2BFDD3AE64396848142D148362D0182278",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C333CCA42B76DAB308C436958D3D72C5B6ACE147" : 0,
+    "223B1B2BFDD3AE64396848142D148362D0182278" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0156CD63-EC7B-48B7-A32B-7F74694EC6EE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C333CCA42B76DAB308C436958D3D72C5B6ACE147" : "CommuteEvent\/das-quadrat\/",
+    "223B1B2BFDD3AE64396848142D148362D0182278" : "CommuteEvent"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CommuteEvent",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CommuteEvent.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/aluco100\/CommuteEvent.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "223B1B2BFDD3AE64396848142D148362D0182278"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Constantine-Fry\/das-quadrat.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C333CCA42B76DAB308C436958D3D72C5B6ACE147"
+    }
+  ]
+}

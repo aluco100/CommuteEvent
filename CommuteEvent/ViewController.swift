@@ -10,6 +10,7 @@
 import UIKit
 import MapKit
 import SwifteriOS
+import QuadratTouch
 
 class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewDataSource, UITableViewDelegate,TweetsListener{
     
@@ -24,7 +25,6 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        
         
         //instanciar al usuario
         //let usuario: Usuario = Usuario(Nombre: "Alberto", Password: "alt001")
