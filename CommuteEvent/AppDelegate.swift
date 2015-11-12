@@ -15,14 +15,69 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // inicializar alohar
+        let appId: NSNumber! = 688
+        let APIkey: String! = "6e579c9eb4312ba361cdb5f25f502778959fb2c0"
+        let service: ACXServiceManager = ACXServiceManager.sharedManager();
+       service.initializeWithAppID(appId, APIKey: APIkey, developmentModeEnabled: true, handlerQueue: nil, completion: {
+            (restore:Bool, error:NSError!) -> Void in
+                print("restored \(restore) ")
+                print("error \(error)")
+        
+        if (restore == false) {
+            service.createUserWithCompletion( {
+                (uuid:String!, error:NSError!) -> Void in
+                    let defaults = NSUserDefaults.standardUserDefaults()
+                    defaults.setValue(uuid, forKey: "Alohar_UUID")
+                    self.initMonitoring(service)
+            })
+        } else {
+            self.initMonitoring(service)
+            let gregorian: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+            
+            let components: NSDateComponents = NSDateComponents()
+            components.year = 2015
+            components.month = 10
+            components.day =  1
+            
+            let referenceDate: NSDate = gregorian.dateFromComponents(components)!
+
+            let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+            let uuid: String = (defaults.objectForKey("Alohar_UUID") as? String)!
+            print("uID: \(uuid)")
+            service.signInWithAloharUID("bf4bb541cb4ba0cbfe2a37be0a7141d028d2a5ae", completion: {
+                (error: NSError!) -> Void in
+                print("error: \(error)")
+                
+                /*service.userStayManager.fetchUserStaysFromDate(referenceDate, toDate: NSDate(timeIntervalSinceNow: 1), completion: {
+                    (data : [AnyObject]!, error: NSError!) -> Void in
+                    
+                })*/
+            })
+        
+        }
+        
+       })
+        
+        
+        
         return true
+    }
+    
+    func initMonitoring(service:ACXServiceManager) -> Void {
+        service.startContextMonitoring();
+        let notificationCenter: NSNotificationCenter = NSNotificationCenter.defaultCenter()
+        let locationManager: GeoManager = GeoManager()
+        notificationCenter.addObserver(locationManager, selector: "checkIn", name: ACXLocationDidArriveAtPotentialUserStayNotification, object: nil)
+        notificationCenter.addObserver(locationManager, selector: "stayUpdating", name: ACXUserStayUpdatedNotification, object: nil)
     }
     
     func application(application: UIApplication,
         openURL url: NSURL,
         sourceApplication: String?,
-        annotation: AnyObject?) -> Bool {
-            println("message \(url)");
+        annotation: AnyObject) -> Bool {
+            print("message \(url)");
             Swifter.handleOpenURL(url);
             return true;
     }

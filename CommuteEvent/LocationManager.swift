@@ -28,13 +28,18 @@ class GeoManager: CLLocationManager, CLLocationManagerDelegate{
     }
     
     
-    
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        let location:CLLocation = (locations.last as? CLLocation)!
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location:CLLocation = (locations.last! as CLLocation)
         self.coordinates = location.coordinate
     }
     
     internal func getCoordinates()->CLLocationCoordinate2D{
         return self.coordinates
+    }
+    
+    
+    internal func checkIn(notification: NSNotification){
+        let location = notification.userInfo![ACXLocationLocationKey] as? CLLocation
+        print(location)
     }
 }

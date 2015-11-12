@@ -19,14 +19,16 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
     var tweets:[JSONValue] = []
     var hashtags:[String] = []
     var users:[String] = []
+    var places: Places = Places()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        
+        
         //instanciar al usuario
-        var usuario: Usuario = Usuario(Nombre: "Alberto", Password: "alt001")
-        let ubicacion: CLLocationCoordinate2D = usuario.getUbicacion()
-
+        //let usuario: Usuario = Usuario(Nombre: "Alberto", Password: "alt001")
+        //let ubicacion: CLLocationCoordinate2D = usuario.getUbicacion()
     }
     
     func onTweetsReload(tweets: [JSONValue]) -> Void{
@@ -41,6 +43,13 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
             provider.registerTweetsListener(self)
         }
         
+        
+        let candidates = places.getPlaces()
+        if(candidates.isEmpty){
+            
+        }else{
+            places.getInternalCandidateList()
+        }
         contador++;
         
     }

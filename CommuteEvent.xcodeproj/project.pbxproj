@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C0659A31BD00BE700FB1F79 /* Alohar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0659A21BD00BE700FB1F79 /* Alohar.framework */; };
 		0C5CAA0D1BB5B8EC0068349B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5CAA0C1BB5B8EC0068349B /* LocationManager.swift */; };
 		0C6188861BB78BF100571EE6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6188851BB78BF100571EE6 /* CoreLocation.framework */; };
 		0C6188961BB78EFC00571EE6 /* SwifteriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6188911BB78EC500571EE6 /* SwifteriOS.framework */; };
@@ -22,7 +23,7 @@
 		0C7F50461BB4A527009EE477 /* Configuracion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7F50451BB4A527009EE477 /* Configuracion.swift */; };
 		0C7F50481BB4A72F009EE477 /* Evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7F50471BB4A72F009EE477 /* Evento.swift */; };
 		0CA946871BC6FF51000FC133 /* TweetsListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA946861BC6FF51000FC133 /* TweetsListener.swift */; };
-		0CB9A3DB1BCF2F6C00C7ACDA /* Alohar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB9A3DA1BCF2F6C00C7ACDA /* Alohar.framework */; };
+		0CAD59EB1BF2BEE5006EE7DF /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAD59EA1BF2BEE5006EE7DF /* Places.swift */; };
 		0CB9A3E01BCF303900C7ACDA /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB9A3DF1BCF303900C7ACDA /* CoreMotion.framework */; };
 		0CB9A3E21BCF304900C7ACDA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB9A3E11BCF304900C7ACDA /* CoreTelephony.framework */; };
 		0CB9A3E41BCF305800C7ACDA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB9A3E31BCF305800C7ACDA /* SystemConfiguration.framework */; };
@@ -88,6 +89,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C0659A21BD00BE700FB1F79 /* Alohar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alohar.framework; path = ../../../Downloads/Alohar/SDK/Alohar.framework; sourceTree = "<group>"; };
 		0C5CAA0C1BB5B8EC0068349B /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		0C6188851BB78BF100571EE6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0C6188871BB78EC500571EE6 /* Swifter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Swifter.xcodeproj; path = "../../../Downloads/Swifter-master/Swifter.xcodeproj"; sourceTree = "<group>"; };
@@ -106,7 +108,8 @@
 		0C7F50451BB4A527009EE477 /* Configuracion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuracion.swift; sourceTree = "<group>"; };
 		0C7F50471BB4A72F009EE477 /* Evento.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evento.swift; sourceTree = "<group>"; };
 		0CA946861BC6FF51000FC133 /* TweetsListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsListener.swift; sourceTree = "<group>"; };
-		0CB9A3DA1BCF2F6C00C7ACDA /* Alohar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alohar.framework; path = "../../../Downloads/Alohar SDK for iOS (v1.1)/Alohar Mobile Sample/Alohar.framework"; sourceTree = "<group>"; };
+		0CAD59EA1BF2BEE5006EE7DF /* Places.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
+		0CB273561BD00345006D9C5C /* CommuteEvent-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CommuteEvent-Bridging-Header.h"; sourceTree = "<group>"; };
 		0CB9A3DF1BCF303900C7ACDA /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		0CB9A3E11BCF304900C7ACDA /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		0CB9A3E31BCF305800C7ACDA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -117,10 +120,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C0659A31BD00BE700FB1F79 /* Alohar.framework in Frameworks */,
 				0CB9A3E41BCF305800C7ACDA /* SystemConfiguration.framework in Frameworks */,
 				0CB9A3E21BCF304900C7ACDA /* CoreTelephony.framework in Frameworks */,
 				0CB9A3E01BCF303900C7ACDA /* CoreMotion.framework in Frameworks */,
-				0CB9A3DB1BCF2F6C00C7ACDA /* Alohar.framework in Frameworks */,
 				0C6188861BB78BF100571EE6 /* CoreLocation.framework in Frameworks */,
 				0C6188961BB78EFC00571EE6 /* SwifteriOS.framework in Frameworks */,
 			);
@@ -150,10 +153,10 @@
 		0C7F50151BB4858A009EE477 = {
 			isa = PBXGroup;
 			children = (
+				0C0659A21BD00BE700FB1F79 /* Alohar.framework */,
 				0CB9A3E31BCF305800C7ACDA /* SystemConfiguration.framework */,
 				0CB9A3E11BCF304900C7ACDA /* CoreTelephony.framework */,
 				0CB9A3DF1BCF303900C7ACDA /* CoreMotion.framework */,
-				0CB9A3DA1BCF2F6C00C7ACDA /* Alohar.framework */,
 				0C6188871BB78EC500571EE6 /* Swifter.xcodeproj */,
 				0C6188851BB78BF100571EE6 /* CoreLocation.framework */,
 				0C7F50201BB4858A009EE477 /* CommuteEvent */,
@@ -180,12 +183,14 @@
 				0C7F50471BB4A72F009EE477 /* Evento.swift */,
 				0C7F50451BB4A527009EE477 /* Configuracion.swift */,
 				0C7F50251BB4858A009EE477 /* ViewController.swift */,
+				0CAD59EA1BF2BEE5006EE7DF /* Places.swift */,
 				0CA946861BC6FF51000FC133 /* TweetsListener.swift */,
 				0C5CAA0C1BB5B8EC0068349B /* LocationManager.swift */,
 				0C7F50271BB4858A009EE477 /* Main.storyboard */,
 				0C7F502A1BB4858A009EE477 /* Images.xcassets */,
 				0C7F502C1BB4858A009EE477 /* LaunchScreen.xib */,
 				0C7F50211BB4858A009EE477 /* Supporting Files */,
+				0CB273561BD00345006D9C5C /* CommuteEvent-Bridging-Header.h */,
 			);
 			path = CommuteEvent;
 			sourceTree = "<group>";
@@ -261,11 +266,14 @@
 		0C7F50161BB4858A009EE477 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Alfredo Luco";
 				TargetAttributes = {
 					0C7F501D1BB4858A009EE477 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = J8PM7K467L;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -367,6 +375,7 @@
 				0C7F50441BB48688009EE477 /* Usuario.swift in Sources */,
 				0C7F50481BB4A72F009EE477 /* Evento.swift in Sources */,
 				0C61889C1BB78F4E00571EE6 /* authProvider.swift in Sources */,
+				0CAD59EB1BF2BEE5006EE7DF /* Places.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +442,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -453,6 +463,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -478,6 +489,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -491,6 +503,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_INCLUDE_PATHS = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -500,20 +513,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/alfredoluco/Downloads/Alohar,
-					SDK,
-					for,
-					iOS,
-					"(v1.1)/Alohar",
-					Mobile,
-					Sample,
+					/Users/alfredoluco/Downloads/Alohar/SDK,
 				);
 				INFOPLIST_FILE = CommuteEvent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-v",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/alfredoluco/Documents/curso xcode/CommuteEvent/CommuteEvent/CommuteEvent-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -521,20 +537,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/alfredoluco/Downloads/Alohar,
-					SDK,
-					for,
-					iOS,
-					"(v1.1)/Alohar",
-					Mobile,
-					Sample,
+					/Users/alfredoluco/Downloads/Alohar/SDK,
 				);
 				INFOPLIST_FILE = CommuteEvent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-v",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/alfredoluco/Documents/curso xcode/CommuteEvent/CommuteEvent/CommuteEvent-Bridging-Header.h";
 			};
 			name = Release;
 		};

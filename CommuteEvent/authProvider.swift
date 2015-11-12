@@ -52,7 +52,7 @@ class Provider{
                 self.getHomeTimeline()
             },
             failure: { (error) -> Void in
-                println(error);
+                print(error);
             }
         )
     }
@@ -65,14 +65,13 @@ class Provider{
         //mas parametros que los vistos en el repositorio
         self.swifter.getStatusesHomeTimelineWithCount(limit, trimUser: true, contributorDetails: true, includeEntities: true, success: {
             (data: [JSONValue]?) in
-            println(data)
             self.tweets = data!
             self.signalEvent()
             
             }, failure: {
                 (error: NSError) in
                 //en caso de error
-                println(error)
+                //print(error)
         })
         
     }
@@ -87,8 +86,8 @@ class Provider{
             return []
         }
         for i in 0...self.tweets.count - 1 {
-            var t = self.tweets[i]["entities"]["hashtags"]
-            var count = t.array!.count
+            let t = self.tweets[i]["entities"]["hashtags"]
+            let count = t.array!.count
             if (count > 0) {
                 for j in 0...count - 1
                 {
@@ -105,8 +104,8 @@ class Provider{
             return []
         }
         for i in 0...self.tweets.count - 1{
-            var u = self.tweets[i]["entities"]["user_mentions"]
-            var count = u.array!.count
+            let u = self.tweets[i]["entities"]["user_mentions"]
+            let count = u.array!.count
             if(count > 0)
             {
                 for j in 0...count - 1 {
