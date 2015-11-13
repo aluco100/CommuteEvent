@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C0659A31BD00BE700FB1F79 /* Alohar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0659A21BD00BE700FB1F79 /* Alohar.framework */; };
 		0C29E3701BF5298F000EED3C /* Radar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C29E36F1BF5298F000EED3C /* Radar.swift */; };
+		0C37A98A1BF55E74003ECF75 /* PlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C37A9891BF55E74003ECF75 /* PlaceManager.swift */; };
 		0C5CAA0D1BB5B8EC0068349B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5CAA0C1BB5B8EC0068349B /* LocationManager.swift */; };
 		0C6188861BB78BF100571EE6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6188851BB78BF100571EE6 /* CoreLocation.framework */; };
 		0C6188961BB78EFC00571EE6 /* SwifteriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6188911BB78EC500571EE6 /* SwifteriOS.framework */; };
@@ -125,6 +126,7 @@
 /* Begin PBXFileReference section */
 		0C0659A21BD00BE700FB1F79 /* Alohar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alohar.framework; path = ../../../Downloads/Alohar/SDK/Alohar.framework; sourceTree = "<group>"; };
 		0C29E36F1BF5298F000EED3C /* Radar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Radar.swift; sourceTree = "<group>"; };
+		0C37A9891BF55E74003ECF75 /* PlaceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceManager.swift; sourceTree = "<group>"; };
 		0C5CAA0C1BB5B8EC0068349B /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		0C6188851BB78BF100571EE6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0C6188871BB78EC500571EE6 /* Swifter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Swifter.xcodeproj; path = "../../../Downloads/Swifter-master/Swifter.xcodeproj"; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				0C7F50231BB4858A009EE477 /* AppDelegate.swift */,
 				0C61889B1BB78F4E00571EE6 /* authProvider.swift */,
 				0C7F50431BB48688009EE477 /* Usuario.swift */,
+				0C37A9891BF55E74003ECF75 /* PlaceManager.swift */,
 				0C7F50471BB4A72F009EE477 /* Evento.swift */,
 				0C7F50451BB4A527009EE477 /* Configuracion.swift */,
 				0C7F50251BB4858A009EE477 /* ViewController.swift */,
@@ -454,6 +457,7 @@
 				0C7F50241BB4858A009EE477 /* AppDelegate.swift in Sources */,
 				0C7F50441BB48688009EE477 /* Usuario.swift in Sources */,
 				0C7F50481BB4A72F009EE477 /* Evento.swift in Sources */,
+				0C37A98A1BF55E74003ECF75 /* PlaceManager.swift in Sources */,
 				0C61889C1BB78F4E00571EE6 /* authProvider.swift in Sources */,
 				0CAD59EB1BF2BEE5006EE7DF /* Places.swift in Sources */,
 			);

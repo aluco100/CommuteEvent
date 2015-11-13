@@ -38,7 +38,17 @@ class Radar {
         return self.twitters
     }
     
-    internal func getNearlyPlaces(){
+    internal func getNearlyPlaces(coordinates: CLLocationCoordinate2D){
+        let ejes: String = "\(coordinates.latitude),\(coordinates.longitude)"
+        let parameters = [Parameter.ll:ejes]
+        let searchTask = self.session.venues.search(parameters) {
+            (result) -> Void in
+            if let response = result.response {
+                print(response)
+                self.lugares = (response["venues"] as! [AnyObject]?)!
+            }
+        }
+        searchTask.start()
     
     }
 }

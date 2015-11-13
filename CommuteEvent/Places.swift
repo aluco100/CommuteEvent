@@ -23,7 +23,7 @@ class Places {
     }
     
     
-    internal func getPlaces()->[AnyObject]{
+    internal func getPlaces()->[ACXUserStay]{
         
         var places:[ACXUserStay] = []
         let mainService: ACXServiceManager = ACXServiceManager.sharedManager();

@@ -21,6 +21,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
     var hashtags:[String] = []
     var users:[String] = []
     var places: Places = Places()
+    var radar: Radar = Radar()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -45,6 +46,9 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
         
         
         let candidates = places.getPlaces()
+        let mngr: PlaceManager = PlaceManager(locations: candidates,radarInit: radar)
+        mngr.catchingCandidates()
+        print(mngr.getCandidatesLocations())
         if(candidates.isEmpty){
             
         }else{
