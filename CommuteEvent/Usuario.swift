@@ -13,7 +13,6 @@ class Usuario{
     private var Nombre: String
     private var Password: String
     private var location: GeoManager
-    
     //constructor
     
      init(Nombre: String, Password: String){

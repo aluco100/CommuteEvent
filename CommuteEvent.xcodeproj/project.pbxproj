@@ -25,6 +25,9 @@
 		0C7F50461BB4A527009EE477 /* Configuracion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7F50451BB4A527009EE477 /* Configuracion.swift */; };
 		0C7F50481BB4A72F009EE477 /* Evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7F50471BB4A72F009EE477 /* Evento.swift */; };
 		0C90AC5F1BF5241500769946 /* QuadratTouch.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 0C90AC5B1BF5234600769946 /* QuadratTouch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0C9298901BF65D4C00A13068 /* CandidateLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C92988F1BF65D4C00A13068 /* CandidateLocation.swift */; };
+		0CA2882B1BFBCD2A001ED578 /* trnql.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CA2882A1BFBCD2A001ED578 /* trnql.framework */; };
+		0CA2882C1BFBCD2A001ED578 /* trnql.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0CA2882A1BFBCD2A001ED578 /* trnql.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0CA946871BC6FF51000FC133 /* TweetsListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA946861BC6FF51000FC133 /* TweetsListener.swift */; };
 		0CAD59EB1BF2BEE5006EE7DF /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAD59EA1BF2BEE5006EE7DF /* Places.swift */; };
 		0CB9A3E01BCF303900C7ACDA /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB9A3DF1BCF303900C7ACDA /* CoreMotion.framework */; };
@@ -105,6 +108,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				0CA2882C1BFBCD2A001ED578 /* trnql.framework in Embed Frameworks */,
 				0C6188971BB78EFC00571EE6 /* SwifteriOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -147,6 +151,8 @@
 		0C90AC531BF5234500769946 /* Quadrat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Quadrat.xcodeproj; path = "das-quadrat/Source/Quadrat.xcodeproj"; sourceTree = "<group>"; };
 		0C90AC671BF5272D00769946 /* CommuteEventUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuteEventUITests.swift; sourceTree = "<group>"; };
 		0C90AC691BF5272D00769946 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C92988F1BF65D4C00A13068 /* CandidateLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateLocation.swift; sourceTree = "<group>"; };
+		0CA2882A1BFBCD2A001ED578 /* trnql.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = trnql.framework; sourceTree = "<group>"; };
 		0CA946861BC6FF51000FC133 /* TweetsListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsListener.swift; sourceTree = "<group>"; };
 		0CAD59EA1BF2BEE5006EE7DF /* Places.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
 		0CB273561BD00345006D9C5C /* CommuteEvent-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CommuteEvent-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C0659A31BD00BE700FB1F79 /* Alohar.framework in Frameworks */,
+				0CA2882B1BFBCD2A001ED578 /* trnql.framework in Frameworks */,
 				0CB9A3E41BCF305800C7ACDA /* SystemConfiguration.framework in Frameworks */,
 				0CB9A3E21BCF304900C7ACDA /* CoreTelephony.framework in Frameworks */,
 				0CB9A3E01BCF303900C7ACDA /* CoreMotion.framework in Frameworks */,
@@ -193,6 +200,7 @@
 		0C7F50151BB4858A009EE477 = {
 			isa = PBXGroup;
 			children = (
+				0CA2882A1BFBCD2A001ED578 /* trnql.framework */,
 				0C90AC531BF5234500769946 /* Quadrat.xcodeproj */,
 				0C0659A21BD00BE700FB1F79 /* Alohar.framework */,
 				0CB9A3E31BCF305800C7ACDA /* SystemConfiguration.framework */,
@@ -227,6 +235,7 @@
 				0C7F50451BB4A527009EE477 /* Configuracion.swift */,
 				0C7F50251BB4858A009EE477 /* ViewController.swift */,
 				0C29E36F1BF5298F000EED3C /* Radar.swift */,
+				0C92988F1BF65D4C00A13068 /* CandidateLocation.swift */,
 				0CAD59EA1BF2BEE5006EE7DF /* Places.swift */,
 				0CA946861BC6FF51000FC133 /* TweetsListener.swift */,
 				0C5CAA0C1BB5B8EC0068349B /* LocationManager.swift */,
@@ -294,6 +303,7 @@
 				0C7F501C1BB4858A009EE477 /* Resources */,
 				0C61889A1BB78EFC00571EE6 /* Embed Frameworks */,
 				0C90AC5E1BF5240400769946 /* Copy Frameworks */,
+				0CA288311BFBCD4E001ED578 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -444,11 +454,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0CA288311BFBCD4E001ED578 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/trnql.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0C7F501A1BB4858A009EE477 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C9298901BF65D4C00A13068 /* CandidateLocation.swift in Sources */,
 				0C7F50261BB4858A009EE477 /* ViewController.swift in Sources */,
 				0CA946871BC6FF51000FC133 /* TweetsListener.swift in Sources */,
 				0C7F50461BB4A527009EE477 /* Configuracion.swift in Sources */,
@@ -608,6 +636,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/alfredoluco/Downloads/Alohar/SDK,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = CommuteEvent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -632,6 +661,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/alfredoluco/Downloads/Alohar/SDK,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = CommuteEvent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

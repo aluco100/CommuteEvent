@@ -11,20 +11,18 @@ import QuadratTouch
 
 class PlaceManager {
     private var userLocations: [ACXUserStay]
-    private var candidatesLocations: [AnyObject]
-    private var candidatesTweets: [AnyObject]
+    private var candidatesLocations: [CandidateLocation]
     private var radar: Radar
     
     init(locations: [ACXUserStay], radarInit: Radar){
         userLocations = locations
         radar = radarInit
         candidatesLocations = []
-        candidatesTweets = []
     }
     
     //funciones getter
     
-    internal func getCandidatesLocations()->[AnyObject]{
+    internal func getCandidatesLocations()->[CandidateLocation]{
         return self.candidatesLocations
     }
     
@@ -32,8 +30,11 @@ class PlaceManager {
         let locations: [ACXUserStay] = self.userLocations
         for i in locations{
             self.radar.getNearlyPlaces(i.centroidCoordinate)
-            let nearly: [AnyObject] = radar.getLugares()
-            candidatesLocations.append(nearly)
+            let nearly: [CandidateLocation] = radar.getVenues()
+            for j in nearly{
+                let nearlyLocation: CandidateLocation = j
+                candidatesLocations.append(nearlyLocation)
+            }
         }
     }
 }

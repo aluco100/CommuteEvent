@@ -11,10 +11,16 @@ import UIKit
 import MapKit
 import SwifteriOS
 import QuadratTouch
+import trnql
 
-class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewDataSource, UITableViewDelegate,TweetsListener{
+class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewDataSource, UITableViewDelegate,TrnqlDelegate,TweetsListener{
+    
+    //outlets
     
     @IBOutlet weak var tableView: UITableView!
+    
+    //variables
+    var trnql: Trnql = Trnql.sharedInstance
     var contador: Int = 0
     var provider: Provider = Provider()
     var tweets:[JSONValue] = []
@@ -24,8 +30,17 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
     var radar: Radar = Radar()
     override func viewDidLoad() {
         super.viewDidLoad()
+        //instanciar la tabla
         tableView.dataSource = self
         tableView.delegate = self
+        
+        //instanciar trnql
+        let api_key = "159c7ac6-9e48-4144-88b7-85feb03b55c3"
+        trnql.delegate = self
+        trnql.setAPIKey(api_key)
+        
+        trnql.startSmartPlaces()
+        
         
         //instanciar al usuario
         //let usuario: Usuario = Usuario(Nombre: "Alberto", Password: "alt001")
@@ -48,12 +63,18 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
         let candidates = places.getPlaces()
         let mngr: PlaceManager = PlaceManager(locations: candidates,radarInit: radar)
         mngr.catchingCandidates()
-        print(mngr.getCandidatesLocations())
+        
         if(candidates.isEmpty){
             
         }else{
             places.getInternalCandidateList()
         }
+        
+        let venues: [CandidateLocation] = mngr.getCandidatesLocations()
+        for i in venues{
+            print("Twitter: \(i.getTwitter()) Name: \(i.getVenue()) Coordinates: \(i.getCoordinates())")
+        }
+        
         contador++;
         
     }
@@ -73,6 +94,19 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
         cell.textLabel?.text = users[indexPath.row]
         
         return cell
+    }
+    
+    func smartPlacesChange(places: [PlaceEntry]?, error: NSError?) {
+        for i in places!{
+            let coordinate : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: i.getLatitude()!, longitude: i.getLongitude()!)
+            radar.getNearlyPlaces(coordinate, callback: {() -> Void in
+                let candidatos: [CandidateLocation] = (self.radar.getVenues())
+                for i in candidatos{
+                    let twitter: String = i.getTwitter()
+                    self.provider.follow(twitter)
+                }
+                })
+        }
     }
 
 

@@ -127,5 +127,9 @@ class Provider{
             i.onTweetsReload(self.tweets)
         }
     }
+    
+    internal func follow(name: String){
+        self.swifter.postCreateFriendshipWithScreenName(name)
+    }
         
 }

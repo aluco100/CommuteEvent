@@ -34,26 +34,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         } else {
             self.initMonitoring(service)
-            let gregorian: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-            
-            let components: NSDateComponents = NSDateComponents()
-            components.year = 2015
-            components.month = 10
-            components.day =  1
-            
-            let referenceDate: NSDate = gregorian.dateFromComponents(components)!
-
             let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+            // let uuid: String = "bf4bb541cb4ba0cbfe2a37be0a7141d028d2a5ae"
             let uuid: String = (defaults.objectForKey("Alohar_UUID") as? String)!
             print("uID: \(uuid)")
-            service.signInWithAloharUID("bf4bb541cb4ba0cbfe2a37be0a7141d028d2a5ae", completion: {
+            service.signInWithAloharUID(uuid, completion: {
                 (error: NSError!) -> Void in
                 print("error: \(error)")
                 
-                /*service.userStayManager.fetchUserStaysFromDate(referenceDate, toDate: NSDate(timeIntervalSinceNow: 1), completion: {
-                    (data : [AnyObject]!, error: NSError!) -> Void in
-                    
-                })*/
             })
         
         }
