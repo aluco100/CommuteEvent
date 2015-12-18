@@ -17,16 +17,17 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
     
     //outlets
     
+    @IBOutlet weak var Alert: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     //variables
-    var contador: Int = 0
     var provider: Provider = Provider.getInstance()
     var tweets:[JSONValue] = []
     var hashtags:[String] = []
     var users:[String] = []
     var radar: Radar = Radar.getInstance()
     var placemngr: PlaceManager = PlaceManager.getInstance()
+    var places: [CandidateLocation] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         //autorizar Twitter
@@ -51,7 +52,16 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
         tableView.delegate = self
         
         placemngr = PlaceManager.getInstance()
-        
+        let userdefaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        if(userdefaults.objectForKey("candidates") != nil){
+            let user_data = userdefaults.objectForKey("candidates") as? NSData
+            let aux = NSKeyedUnarchiver.unarchiveObjectWithData(user_data!) as! [CandidateLocation]
+            for i in aux{
+                print("candidate twitter: \(i.getTwitter())")
+                places.append(i)
+            }
+        }
+        isTheresPlaces()
     }
     
     func onTweetsReload(tweets: [JSONValue]) -> Void{
@@ -65,7 +75,9 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
         hashtags = provider.getHashtags()
         users = provider.getUsers()
         //return hashtags.count
-        return tweets.count
+        //return tweets.count
+        isTheresPlaces()
+        return places.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -73,9 +85,18 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
         
         //cell.textLabel?.text = hashtags[indexPath.row]
         //cell.textLabel?.text = tweets[indexPath.row]["text"].string
-        cell.textLabel?.text = users[indexPath.row]
-        
+        //cell.textLabel?.text = users[indexPath.row]
+        cell.textLabel?.text = places[indexPath.row].getVenue()
         return cell
+    }
+    
+    func isTheresPlaces()->Void{
+        if(self.places.count == 0){
+            Alert.hidden = false
+            Alert.text = "There's no places yet"
+        }else{
+            Alert.hidden = true
+        }
     }
     
 
