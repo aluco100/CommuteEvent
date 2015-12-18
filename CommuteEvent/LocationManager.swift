@@ -37,9 +37,4 @@ class GeoManager: CLLocationManager, CLLocationManagerDelegate{
         return self.coordinates
     }
     
-    
-    internal func checkIn(notification: NSNotification){
-        let location = notification.userInfo![ACXLocationLocationKey] as? CLLocation
-        print(location)
-    }
 }

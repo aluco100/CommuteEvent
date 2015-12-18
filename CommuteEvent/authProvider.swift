@@ -8,15 +8,6 @@
 //
 //
 
-
-/*
-###################Preguntas###############
--Que se pone en el callback url de la api de twitter
-
-
-
-*/
-
 import Foundation
 import SwifteriOS
 import SafariServices
@@ -31,28 +22,39 @@ class Provider{
     private var hashtags: [String]
     private var users: [String]
     private var tweetslistenercontainer: [TweetsListener]
+    private static var instance: Provider? = nil
+    static let lock = dispatch_queue_create("instance.lock", nil)
     
     init(){
         self.consumerKey = "NYYbKwT9gwjwpeSCIGc5f6hBY"
         self.consumerSecret = "IpeZzoM2JXRzeSvOZZlSni87DRtRdQf6Wpy1Jueis5xrPIdjTJ"
         self.swifter = Swifter(consumerKey: self.consumerKey, consumerSecret: self.consumerSecret)
-        self.callbackUrl = NSURL(string: "coevent://callback")!
+        self.callbackUrl = NSURL(string: "CommuteEvent://callback")!
         self.tweets = []
         self.hashtags = []
         self.users = []
         self.tweetslistenercontainer = []
     }
     
+    internal static func getInstance()->Provider{
+        dispatch_sync(lock){
+            if(instance == nil){
+                instance = Provider()
+            }
+        }
+        return instance!
+    }
+    
     //metodo de autorizacion
     
-    internal func getAuth(){
-        
+    internal func getAuth(callback: (error: NSError?)->Void){
         swifter.authorizeWithCallbackURL(self.callbackUrl,
             success: { (accessToken, response) -> Void in
-                self.getHomeTimeline()
+                self.getTweets()
+                callback(error: nil)
             },
             failure: { (error) -> Void in
-                print(error);
+                callback(error: error)
             }
         )
     }
@@ -60,16 +62,18 @@ class Provider{
     
     //metodsos getter
     
-    internal func getHomeTimeline(){
+    internal func getHomeTimeline(callback: (tweets: [JSONValue], error: NSError?)->Void){
         let limit: Int = 100;
         //mas parametros que los vistos en el repositorio
-        self.swifter.getStatusesHomeTimelineWithCount(limit, trimUser: true, contributorDetails: true, includeEntities: true, success: {
+        self.swifter.getStatusesHomeTimelineWithCount(limit, trimUser: nil, contributorDetails: true, includeEntities: true, success: {
             (data: [JSONValue]?) in
             self.tweets = data!
             self.signalEvent()
+            callback(tweets: self.tweets, error: nil)
             
             }, failure: {
                 (error: NSError) in
+                callback(tweets: self.tweets, error: error)
                 //en caso de error
                 //print(error)
         })
@@ -77,7 +81,12 @@ class Provider{
     }
     
     internal func getTweets() -> [JSONValue]{
-        self.getHomeTimeline()
+        self.getHomeTimeline(){
+            (tweets: [JSONValue], error: NSError?)-> Void in
+            if(error != nil){
+                self.tweets = tweets
+            }
+        }
         return self.tweets
     }
     
@@ -129,7 +138,31 @@ class Provider{
     }
     
     internal func follow(name: String){
-        self.swifter.postCreateFriendshipWithScreenName(name)
+        self.swifter.postCreateFriendshipWithScreenName(name, follow: true, success: {
+            (user: Dictionary<String, JSONValue>?) -> Void in
+            print("user: \(user)")
+            self.signalEvent()
+            }, failure: {
+                (error: NSError) -> Void in
+                print("error: \(error)")
+        })
     }
-        
+    
+    internal func getCandidateFromTweetUser(name: String?)->CandidateLocation?{
+        if(name == nil){
+            return nil
+        }
+        let userdefaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        if(userdefaults.objectForKey("candidates") != nil){
+            let user_data = userdefaults.objectForKey("candidates") as? NSData
+            let aux = NSKeyedUnarchiver.unarchiveObjectWithData(user_data!) as! [CandidateLocation]
+            for i in aux{
+                if(i.getTwitter() == name){
+                    print("twitter: \(i.getTwitter())")
+                    return i
+                }
+            }
+        }
+        return nil
+    }
 }

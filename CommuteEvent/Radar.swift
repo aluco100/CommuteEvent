@@ -8,10 +8,13 @@
 
 import Foundation
 import QuadratTouch
+import CoreLocation
 
 class Radar {
     var candidatos: [CandidateLocation]
     var session: Session
+    private static var instance: Radar? = nil
+    static let lock = dispatch_queue_create("instance.lock", nil)
     init(){
         candidatos = []
         
@@ -26,6 +29,16 @@ class Radar {
 
     }
     
+    //instancia singleton
+    internal static func getInstance()->Radar{
+        dispatch_sync(lock){
+            if(instance == nil){
+                instance = Radar()
+            }
+        }
+        return instance!
+    }
+    
     //funciones getter
     
     internal func getVenues()->[CandidateLocation]{
@@ -35,23 +48,42 @@ class Radar {
     internal func getNearlyPlaces(coordinates: CLLocationCoordinate2D, callback: ()->Void){
         let ejes: String = "\(coordinates.latitude),\(coordinates.longitude)"
         let parameters = [Parameter.ll:ejes]
-        let searchTask = self.session.venues.search(parameters) {
+        let searchTask = self.session.venues.explore(parameters) {
             (result) -> Void in
             if let response = result.response {
-                print(response["venues"]?["categories"])
-                if(response["venues"]?["contact"] != nil){
-                    let name: String = (response["venues"]!["name"] as? String)!
-                    let twitter: String = (response["venues"]!["contact"]!!["twitter"] as? String)!
-                    let lat: CLLocationDegrees = (response["venues"]!["location"]!!["lat"] as? CLLocationDegrees)!
-                    let long: CLLocationDegrees = (response["venues"]!["location"]!!["lng"] as? CLLocationDegrees)!
-                    let coordenada: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: lat, longitude: long)
-                    let venue: CandidateLocation = CandidateLocation(Venue: name, Twitter: twitter, Coordinates: coordenada)
-                    self.candidatos.append(venue)
+                for i in 0...response["groups"]!.count-1{
+                    let group = response["groups"]![i]
+                    for j in 0...group["items"]!!.count-1 {
+                        var name = ""
+                        var twitter: String? = ""
+                        var lat: CLLocationDegrees?
+                        var long: CLLocationDegrees?
+                        let venue = group["items"]!![j]["venue"]
+                        if(venue!!["contact"] != nil){
+                            let object = (venue!!["name"])!
+                            let object2 = venue!!["contact"]
+                            let object3 = venue!!["location"]
+                            if(object2??["twitter"] != nil && object3??["lat"] != nil){
+                                name = object as! String
+                                twitter = (object2!!["twitter"] as? String)
+                                lat = (object3!!["lat"] as? CLLocationDegrees)
+                                long = (object3!!["lng"] as? CLLocationDegrees)
+                            }
+                            if (twitter != nil && twitter != ""){
+                                let coordenada: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
+                                let venue: CandidateLocation = CandidateLocation(Venue: name, Twitter: twitter!, Coordinates: coordenada)
+                                self.candidatos.append(venue)
+                            }
+                            
+                        }
+                        
+                    }
                 }
             }
             callback()
         }
         searchTask.start()
-    
+        
     }
+   
 }

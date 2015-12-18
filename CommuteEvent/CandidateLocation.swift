@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 class CandidateLocation {
     private var venue: String

@@ -13,53 +13,6 @@ import SwifteriOS
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        
-        // inicializar alohar
-        let appId: NSNumber! = 688
-        let APIkey: String! = "6e579c9eb4312ba361cdb5f25f502778959fb2c0"
-        let service: ACXServiceManager = ACXServiceManager.sharedManager();
-       service.initializeWithAppID(appId, APIKey: APIkey, developmentModeEnabled: true, handlerQueue: nil, completion: {
-            (restore:Bool, error:NSError!) -> Void in
-                print("restored \(restore) ")
-                print("error \(error)")
-        
-        if (restore == false) {
-            service.createUserWithCompletion( {
-                (uuid:String!, error:NSError!) -> Void in
-                    let defaults = NSUserDefaults.standardUserDefaults()
-                    defaults.setValue(uuid, forKey: "Alohar_UUID")
-                    self.initMonitoring(service)
-            })
-        } else {
-            self.initMonitoring(service)
-            let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-            // let uuid: String = "bf4bb541cb4ba0cbfe2a37be0a7141d028d2a5ae"
-            let uuid: String = (defaults.objectForKey("Alohar_UUID") as? String)!
-            print("uID: \(uuid)")
-            service.signInWithAloharUID(uuid, completion: {
-                (error: NSError!) -> Void in
-                print("error: \(error)")
-                
-            })
-        
-        }
-        
-       })
-        
-        
-        
-        return true
-    }
-    
-    func initMonitoring(service:ACXServiceManager) -> Void {
-        service.startContextMonitoring();
-        let notificationCenter: NSNotificationCenter = NSNotificationCenter.defaultCenter()
-        let locationManager: GeoManager = GeoManager()
-        notificationCenter.addObserver(locationManager, selector: "checkIn", name: ACXLocationDidArriveAtPotentialUserStayNotification, object: nil)
-        notificationCenter.addObserver(locationManager, selector: "stayUpdating", name: ACXUserStayUpdatedNotification, object: nil)
-    }
     
     func application(application: UIApplication,
         openURL url: NSURL,
@@ -69,15 +22,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Swifter.handleOpenURL(url);
             return true;
     }
-    
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+        let notificationType = UIUserNotificationType.Alert
+        let acceptAction = UIMutableUserNotificationAction()
+        acceptAction.identifier = "Accept"
+        acceptAction.title = "Accept"
+        acceptAction.activationMode = UIUserNotificationActivationMode.Background
+        acceptAction.destructive = false
+        acceptAction.authenticationRequired = false
+        
+        let declineAction = UIMutableUserNotificationAction()
+        declineAction.identifier = "Decline"
+        declineAction.title = "Decline"
+        declineAction.activationMode = UIUserNotificationActivationMode.Background
+        declineAction.destructive = false
+        declineAction.authenticationRequired = false
+        
+        
+        let category = UIMutableUserNotificationCategory()
+        category.identifier = "invite"
+        category.setActions([acceptAction, declineAction], forContext: UIUserNotificationActionContext.Default)
+        let categories = NSSet(array: [category])
+        let settings = UIUserNotificationSettings(forTypes: notificationType, categories: categories as? Set<UIUserNotificationCategory>)
+        application.registerUserNotificationSettings(settings)
+        
+        return true
+    }
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        PlaceManager.getInstance()
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
@@ -86,10 +63,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        PlaceManager.getInstance()
     }
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        PlaceManager.getInstance()
     }
 
 

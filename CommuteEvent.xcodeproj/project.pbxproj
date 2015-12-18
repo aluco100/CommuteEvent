@@ -7,32 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C0659A31BD00BE700FB1F79 /* Alohar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C0659A21BD00BE700FB1F79 /* Alohar.framework */; };
 		0C29E3701BF5298F000EED3C /* Radar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C29E36F1BF5298F000EED3C /* Radar.swift */; };
 		0C37A98A1BF55E74003ECF75 /* PlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C37A9891BF55E74003ECF75 /* PlaceManager.swift */; };
-		0C5CAA0D1BB5B8EC0068349B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5CAA0C1BB5B8EC0068349B /* LocationManager.swift */; };
 		0C6188861BB78BF100571EE6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6188851BB78BF100571EE6 /* CoreLocation.framework */; };
 		0C6188961BB78EFC00571EE6 /* SwifteriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6188911BB78EC500571EE6 /* SwifteriOS.framework */; };
 		0C6188971BB78EFC00571EE6 /* SwifteriOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6188911BB78EC500571EE6 /* SwifteriOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0C61889C1BB78F4E00571EE6 /* authProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61889B1BB78F4E00571EE6 /* authProvider.swift */; };
+		0C740BF21C09F3970079EC55 /* trnql.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C740BF11C09F3970079EC55 /* trnql.framework */; };
+		0C7A29671C24777D00710722 /* ButtonTwitterNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C7A29661C24777D00710722 /* ButtonTwitterNormal.png */; };
+		0C7A29691C2478D200710722 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7A29681C2478D200710722 /* SigninViewController.swift */; };
+		0C7A296B1C24793D00710722 /* signinBack.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0C7A296A1C24793D00710722 /* signinBack.jpg */; };
+		0C7A296D1C247CD000710722 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0C7A296C1C247CD000710722 /* background.jpg */; };
+		0C7A29731C248A8000710722 /* event.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C7A29711C248A8000710722 /* event.png */; };
+		0C7A29741C248A8000710722 /* places.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C7A29721C248A8000710722 /* places.png */; };
+		0C7A29761C248B3000710722 /* rsz_event.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C7A29751C248B3000710722 /* rsz_event.png */; };
 		0C7F50241BB4858A009EE477 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7F50231BB4858A009EE477 /* AppDelegate.swift */; };
 		0C7F50261BB4858A009EE477 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7F50251BB4858A009EE477 /* ViewController.swift */; };
 		0C7F50291BB4858A009EE477 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C7F50271BB4858A009EE477 /* Main.storyboard */; };
 		0C7F502B1BB4858A009EE477 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C7F502A1BB4858A009EE477 /* Images.xcassets */; };
 		0C7F502E1BB4858A009EE477 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C7F502C1BB4858A009EE477 /* LaunchScreen.xib */; };
 		0C7F503A1BB4858B009EE477 /* CommuteEventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7F50391BB4858B009EE477 /* CommuteEventTests.swift */; };
-		0C7F50441BB48688009EE477 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7F50431BB48688009EE477 /* Usuario.swift */; };
-		0C7F50461BB4A527009EE477 /* Configuracion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7F50451BB4A527009EE477 /* Configuracion.swift */; };
 		0C7F50481BB4A72F009EE477 /* Evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7F50471BB4A72F009EE477 /* Evento.swift */; };
-		0C90AC5F1BF5241500769946 /* QuadratTouch.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 0C90AC5B1BF5234600769946 /* QuadratTouch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0C9298901BF65D4C00A13068 /* CandidateLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C92988F1BF65D4C00A13068 /* CandidateLocation.swift */; };
-		0CA2882B1BFBCD2A001ED578 /* trnql.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CA2882A1BFBCD2A001ED578 /* trnql.framework */; };
-		0CA2882C1BFBCD2A001ED578 /* trnql.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0CA2882A1BFBCD2A001ED578 /* trnql.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0CA946871BC6FF51000FC133 /* TweetsListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA946861BC6FF51000FC133 /* TweetsListener.swift */; };
-		0CAD59EB1BF2BEE5006EE7DF /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAD59EA1BF2BEE5006EE7DF /* Places.swift */; };
 		0CB9A3E01BCF303900C7ACDA /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB9A3DF1BCF303900C7ACDA /* CoreMotion.framework */; };
 		0CB9A3E21BCF304900C7ACDA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB9A3E11BCF304900C7ACDA /* CoreTelephony.framework */; };
 		0CB9A3E41BCF305800C7ACDA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB9A3E31BCF305800C7ACDA /* SystemConfiguration.framework */; };
+		48D7D03C12641E3D5A3E11E7 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D8CC3C88096ED4F6F61D820 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,27 +79,6 @@
 			remoteGlobalIDString = 0C7F501D1BB4858A009EE477;
 			remoteInfo = CommuteEvent;
 		};
-		0C90AC581BF5234600769946 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0C90AC531BF5234500769946 /* Quadrat.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 476B70891A0EBAE700AFAC33;
-			remoteInfo = Quadrat;
-		};
-		0C90AC5A1BF5234600769946 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0C90AC531BF5234500769946 /* Quadrat.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 476B70DA1A0EBBA500AFAC33;
-			remoteInfo = QuadratTouch;
-		};
-		0C90AC5C1BF523EB00769946 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0C90AC531BF5234500769946 /* Quadrat.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 476B70D91A0EBBA500AFAC33;
-			remoteInfo = QuadratTouch;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -108,33 +88,36 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0CA2882C1BFBCD2A001ED578 /* trnql.framework in Embed Frameworks */,
 				0C6188971BB78EFC00571EE6 /* SwifteriOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0C90AC5E1BF5240400769946 /* Copy Frameworks */ = {
+		0C87F2071C07281500FF732F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0C90AC5F1BF5241500769946 /* QuadratTouch.framework in Copy Frameworks */,
 			);
-			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0C0659A21BD00BE700FB1F79 /* Alohar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alohar.framework; path = ../../../Downloads/Alohar/SDK/Alohar.framework; sourceTree = "<group>"; };
 		0C29E36F1BF5298F000EED3C /* Radar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Radar.swift; sourceTree = "<group>"; };
 		0C37A9891BF55E74003ECF75 /* PlaceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceManager.swift; sourceTree = "<group>"; };
-		0C5CAA0C1BB5B8EC0068349B /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		0C6188851BB78BF100571EE6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0C6188871BB78EC500571EE6 /* Swifter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Swifter.xcodeproj; path = "../../../Downloads/Swifter-master/Swifter.xcodeproj"; sourceTree = "<group>"; };
 		0C61889B1BB78F4E00571EE6 /* authProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = authProvider.swift; sourceTree = "<group>"; };
+		0C740BF11C09F3970079EC55 /* trnql.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = trnql.framework; path = "/Users/alfredoluco/Documents/curso xcode/CommuteEvent/trnql.framework"; sourceTree = "<absolute>"; };
+		0C7A29661C24777D00710722 /* ButtonTwitterNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonTwitterNormal.png; sourceTree = SOURCE_ROOT; };
+		0C7A29681C2478D200710722 /* SigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
+		0C7A296A1C24793D00710722 /* signinBack.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = signinBack.jpg; sourceTree = SOURCE_ROOT; };
+		0C7A296C1C247CD000710722 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = SOURCE_ROOT; };
+		0C7A29711C248A8000710722 /* event.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = event.png; sourceTree = SOURCE_ROOT; };
+		0C7A29721C248A8000710722 /* places.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = places.png; sourceTree = SOURCE_ROOT; };
+		0C7A29751C248B3000710722 /* rsz_event.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rsz_event.png; path = ../rsz_event.png; sourceTree = "<group>"; };
 		0C7F501E1BB4858A009EE477 /* CommuteEvent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommuteEvent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C7F50221BB4858A009EE477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C7F50231BB4858A009EE477 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,20 +128,17 @@
 		0C7F50331BB4858B009EE477 /* CommuteEventTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommuteEventTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C7F50381BB4858B009EE477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C7F50391BB4858B009EE477 /* CommuteEventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuteEventTests.swift; sourceTree = "<group>"; };
-		0C7F50431BB48688009EE477 /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
-		0C7F50451BB4A527009EE477 /* Configuracion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuracion.swift; sourceTree = "<group>"; };
 		0C7F50471BB4A72F009EE477 /* Evento.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evento.swift; sourceTree = "<group>"; };
-		0C90AC531BF5234500769946 /* Quadrat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Quadrat.xcodeproj; path = "das-quadrat/Source/Quadrat.xcodeproj"; sourceTree = "<group>"; };
 		0C90AC671BF5272D00769946 /* CommuteEventUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommuteEventUITests.swift; sourceTree = "<group>"; };
 		0C90AC691BF5272D00769946 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C92988F1BF65D4C00A13068 /* CandidateLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateLocation.swift; sourceTree = "<group>"; };
-		0CA2882A1BFBCD2A001ED578 /* trnql.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = trnql.framework; sourceTree = "<group>"; };
 		0CA946861BC6FF51000FC133 /* TweetsListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsListener.swift; sourceTree = "<group>"; };
-		0CAD59EA1BF2BEE5006EE7DF /* Places.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
-		0CB273561BD00345006D9C5C /* CommuteEvent-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CommuteEvent-Bridging-Header.h"; sourceTree = "<group>"; };
 		0CB9A3DF1BCF303900C7ACDA /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		0CB9A3E11BCF304900C7ACDA /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		0CB9A3E31BCF305800C7ACDA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3D8CC3C88096ED4F6F61D820 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8582D31E129244599A645EAE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E141ED2D71D7ABFD7BB20EF0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,13 +146,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C0659A31BD00BE700FB1F79 /* Alohar.framework in Frameworks */,
-				0CA2882B1BFBCD2A001ED578 /* trnql.framework in Frameworks */,
 				0CB9A3E41BCF305800C7ACDA /* SystemConfiguration.framework in Frameworks */,
+				0C740BF21C09F3970079EC55 /* trnql.framework in Frameworks */,
 				0CB9A3E21BCF304900C7ACDA /* CoreTelephony.framework in Frameworks */,
 				0CB9A3E01BCF303900C7ACDA /* CoreMotion.framework in Frameworks */,
 				0C6188861BB78BF100571EE6 /* CoreLocation.framework in Frameworks */,
 				0C6188961BB78EFC00571EE6 /* SwifteriOS.framework in Frameworks */,
+				48D7D03C12641E3D5A3E11E7 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,9 +180,6 @@
 		0C7F50151BB4858A009EE477 = {
 			isa = PBXGroup;
 			children = (
-				0CA2882A1BFBCD2A001ED578 /* trnql.framework */,
-				0C90AC531BF5234500769946 /* Quadrat.xcodeproj */,
-				0C0659A21BD00BE700FB1F79 /* Alohar.framework */,
 				0CB9A3E31BCF305800C7ACDA /* SystemConfiguration.framework */,
 				0CB9A3E11BCF304900C7ACDA /* CoreTelephony.framework */,
 				0CB9A3DF1BCF303900C7ACDA /* CoreMotion.framework */,
@@ -212,6 +189,8 @@
 				0C7F50361BB4858B009EE477 /* CommuteEventTests */,
 				0C90AC661BF5272D00769946 /* CommuteEventUITests */,
 				0C7F501F1BB4858A009EE477 /* Products */,
+				AF88BD59264378C1B5BE0D1D /* Pods */,
+				9C1B939FC7A5B8F389348A28 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -229,21 +208,17 @@
 			children = (
 				0C7F50231BB4858A009EE477 /* AppDelegate.swift */,
 				0C61889B1BB78F4E00571EE6 /* authProvider.swift */,
-				0C7F50431BB48688009EE477 /* Usuario.swift */,
-				0C37A9891BF55E74003ECF75 /* PlaceManager.swift */,
 				0C7F50471BB4A72F009EE477 /* Evento.swift */,
-				0C7F50451BB4A527009EE477 /* Configuracion.swift */,
+				0C37A9891BF55E74003ECF75 /* PlaceManager.swift */,
 				0C7F50251BB4858A009EE477 /* ViewController.swift */,
 				0C29E36F1BF5298F000EED3C /* Radar.swift */,
 				0C92988F1BF65D4C00A13068 /* CandidateLocation.swift */,
-				0CAD59EA1BF2BEE5006EE7DF /* Places.swift */,
 				0CA946861BC6FF51000FC133 /* TweetsListener.swift */,
-				0C5CAA0C1BB5B8EC0068349B /* LocationManager.swift */,
 				0C7F50271BB4858A009EE477 /* Main.storyboard */,
+				0C7A29681C2478D200710722 /* SigninViewController.swift */,
 				0C7F502A1BB4858A009EE477 /* Images.xcassets */,
 				0C7F502C1BB4858A009EE477 /* LaunchScreen.xib */,
 				0C7F50211BB4858A009EE477 /* Supporting Files */,
-				0CB273561BD00345006D9C5C /* CommuteEvent-Bridging-Header.h */,
 			);
 			path = CommuteEvent;
 			sourceTree = "<group>";
@@ -251,6 +226,12 @@
 		0C7F50211BB4858A009EE477 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0C7A29751C248B3000710722 /* rsz_event.png */,
+				0C7A29721C248A8000710722 /* places.png */,
+				0C7A29711C248A8000710722 /* event.png */,
+				0C7A296C1C247CD000710722 /* background.jpg */,
+				0C7A296A1C24793D00710722 /* signinBack.jpg */,
+				0C7A29661C24777D00710722 /* ButtonTwitterNormal.png */,
 				0C7F50221BB4858A009EE477 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -273,15 +254,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0C90AC541BF5234500769946 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0C90AC591BF5234600769946 /* Quadrat.framework */,
-				0C90AC5B1BF5234600769946 /* QuadratTouch.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		0C90AC661BF5272D00769946 /* CommuteEventUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +263,23 @@
 			path = CommuteEventUITests;
 			sourceTree = "<group>";
 		};
+		9C1B939FC7A5B8F389348A28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D8CC3C88096ED4F6F61D820 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF88BD59264378C1B5BE0D1D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8582D31E129244599A645EAE /* Pods.debug.xcconfig */,
+				E141ED2D71D7ABFD7BB20EF0 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -298,17 +287,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0C7F503D1BB4858B009EE477 /* Build configuration list for PBXNativeTarget "CommuteEvent" */;
 			buildPhases = (
+				EAB60E015C537AA61AF46A71 /* Check Pods Manifest.lock */,
 				0C7F501A1BB4858A009EE477 /* Sources */,
-				0C7F501B1BB4858A009EE477 /* Frameworks */,
 				0C7F501C1BB4858A009EE477 /* Resources */,
+				3C65345183161082D715D3E3 /* Embed Pods Frameworks */,
 				0C61889A1BB78EFC00571EE6 /* Embed Frameworks */,
-				0C90AC5E1BF5240400769946 /* Copy Frameworks */,
-				0CA288311BFBCD4E001ED578 /* Run Script */,
+				0C87F2071C07281500FF732F /* CopyFiles */,
+				379A983D8E56121C026BBAC3 /* Copy Pods Resources */,
+				0C7F501B1BB4858A009EE477 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0C90AC5D1BF523EB00769946 /* PBXTargetDependency */,
 				0C6188991BB78EFC00571EE6 /* PBXTargetDependency */,
 			);
 			name = CommuteEvent;
@@ -373,10 +363,6 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 0C90AC541BF5234500769946 /* Products */;
-					ProjectRef = 0C90AC531BF5234500769946 /* Quadrat.xcodeproj */;
-				},
-				{
 					ProductGroup = 0C6188881BB78EC500571EE6 /* Products */;
 					ProjectRef = 0C6188871BB78EC500571EE6 /* Swifter.xcodeproj */;
 				},
@@ -418,20 +404,6 @@
 			remoteRef = 0C6188941BB78EC500571EE6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0C90AC591BF5234600769946 /* Quadrat.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Quadrat.framework;
-			remoteRef = 0C90AC581BF5234600769946 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0C90AC5B1BF5234600769946 /* QuadratTouch.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = QuadratTouch.framework;
-			remoteRef = 0C90AC5A1BF5234600769946 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -441,7 +413,13 @@
 			files = (
 				0C7F50291BB4858A009EE477 /* Main.storyboard in Resources */,
 				0C7F502E1BB4858A009EE477 /* LaunchScreen.xib in Resources */,
+				0C7A296B1C24793D00710722 /* signinBack.jpg in Resources */,
+				0C7A296D1C247CD000710722 /* background.jpg in Resources */,
+				0C7A29671C24777D00710722 /* ButtonTwitterNormal.png in Resources */,
+				0C7A29741C248A8000710722 /* places.png in Resources */,
+				0C7A29761C248B3000710722 /* rsz_event.png in Resources */,
 				0C7F502B1BB4858A009EE477 /* Images.xcassets in Resources */,
+				0C7A29731C248A8000710722 /* event.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,19 +433,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0CA288311BFBCD4E001ED578 /* Run Script */ = {
+		379A983D8E56121C026BBAC3 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Run Script";
+			name = "Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/trnql.framework/strip-frameworks.sh\"";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C65345183161082D715D3E3 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAB60E015C537AA61AF46A71 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -479,15 +488,12 @@
 				0C9298901BF65D4C00A13068 /* CandidateLocation.swift in Sources */,
 				0C7F50261BB4858A009EE477 /* ViewController.swift in Sources */,
 				0CA946871BC6FF51000FC133 /* TweetsListener.swift in Sources */,
-				0C7F50461BB4A527009EE477 /* Configuracion.swift in Sources */,
-				0C5CAA0D1BB5B8EC0068349B /* LocationManager.swift in Sources */,
 				0C29E3701BF5298F000EED3C /* Radar.swift in Sources */,
 				0C7F50241BB4858A009EE477 /* AppDelegate.swift in Sources */,
-				0C7F50441BB48688009EE477 /* Usuario.swift in Sources */,
 				0C7F50481BB4A72F009EE477 /* Evento.swift in Sources */,
 				0C37A98A1BF55E74003ECF75 /* PlaceManager.swift in Sources */,
 				0C61889C1BB78F4E00571EE6 /* authProvider.swift in Sources */,
-				0CAD59EB1BF2BEE5006EE7DF /* Places.swift in Sources */,
+				0C7A29691C2478D200710722 /* SigninViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,11 +517,6 @@
 			isa = PBXTargetDependency;
 			target = 0C7F501D1BB4858A009EE477 /* CommuteEvent */;
 			targetProxy = 0C7F50341BB4858B009EE477 /* PBXContainerItemProxy */;
-		};
-		0C90AC5D1BF523EB00769946 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = QuadratTouch;
-			targetProxy = 0C90AC5C1BF523EB00769946 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -628,18 +629,20 @@
 		};
 		0C7F503E1BB4858B009EE477 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8582D31E129244599A645EAE /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/alfredoluco/Downloads/Alohar/SDK,
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = CommuteEvent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-v",
@@ -648,23 +651,26 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/alfredoluco/Documents/curso xcode/CommuteEvent/CommuteEvent/CommuteEvent-Bridging-Header.h";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
 		0C7F503F1BB4858B009EE477 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E141ED2D71D7ABFD7BB20EF0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/alfredoluco/Downloads/Alohar/SDK,
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = CommuteEvent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-v",
@@ -673,6 +679,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/alfredoluco/Documents/curso xcode/CommuteEvent/CommuteEvent/CommuteEvent-Bridging-Header.h";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};

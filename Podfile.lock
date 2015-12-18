@@ -1,0 +1,22 @@
+PODS:
+  - QuadratTouch (1.1.1)
+  - trnql (1.5.1)
+
+DEPENDENCIES:
+  - QuadratTouch (>= 1.0)
+  - trnql (from `https://github.com/trnql/trnql_ios.git`)
+
+EXTERNAL SOURCES:
+  trnql:
+    :git: https://github.com/trnql/trnql_ios.git
+
+CHECKOUT OPTIONS:
+  trnql:
+    :commit: 71fbd54c073af0602a02bf795f5b02cfca4f832a
+    :git: https://github.com/trnql/trnql_ios.git
+
+SPEC CHECKSUMS:
+  QuadratTouch: 296d83c63a4328f6f40af9fc728fe24f0e3b00d4
+  trnql: 9bf48ed84292c4381dcc867758944c506139f32d
+
+COCOAPODS: 0.39.0

@@ -20,31 +20,38 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
     @IBOutlet weak var tableView: UITableView!
     
     //variables
-    var trnql: Trnql = Trnql.sharedInstance
     var contador: Int = 0
-    var provider: Provider = Provider()
+    var provider: Provider = Provider.getInstance()
     var tweets:[JSONValue] = []
     var hashtags:[String] = []
     var users:[String] = []
-    var places: Places = Places()
-    var radar: Radar = Radar()
+    var radar: Radar = Radar.getInstance()
+    var placemngr: PlaceManager = PlaceManager.getInstance()
     override func viewDidLoad() {
         super.viewDidLoad()
+        //autorizar Twitter
+        provider.getAuth({
+            (error: NSError?) -> Void in
+            if(error == nil){
+                self.provider.registerTweetsListener(self)
+                self.placemngr = PlaceManager.getInstance()
+                self.provider.getHomeTimeline({
+                    (tweets: [JSONValue], error: NSError?) -> Void in
+                    
+                })
+            }else {
+                print("error viewDidLoad: \(error)")
+            }
+        })
+        
+        view.backgroundColor = UIColor.init(patternImage: UIImage(named: "background.jpg")!)
+        
         //instanciar la tabla
         tableView.dataSource = self
         tableView.delegate = self
         
-        //instanciar trnql
-        let api_key = "159c7ac6-9e48-4144-88b7-85feb03b55c3"
-        trnql.delegate = self
-        trnql.setAPIKey(api_key)
+        placemngr = PlaceManager.getInstance()
         
-        trnql.startSmartPlaces()
-        
-        
-        //instanciar al usuario
-        //let usuario: Usuario = Usuario(Nombre: "Alberto", Password: "alt001")
-        //let ubicacion: CLLocationCoordinate2D = usuario.getUbicacion()
     }
     
     func onTweetsReload(tweets: [JSONValue]) -> Void{
@@ -53,31 +60,6 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
         }
     }
 
-    @IBAction func getCoordenadas(sender: AnyObject) {
-        if(contador == 0){
-            provider.getAuth()
-            provider.registerTweetsListener(self)
-        }
-        
-        
-        let candidates = places.getPlaces()
-        let mngr: PlaceManager = PlaceManager(locations: candidates,radarInit: radar)
-        mngr.catchingCandidates()
-        
-        if(candidates.isEmpty){
-            
-        }else{
-            places.getInternalCandidateList()
-        }
-        
-        let venues: [CandidateLocation] = mngr.getCandidatesLocations()
-        for i in venues{
-            print("Twitter: \(i.getTwitter()) Name: \(i.getVenue()) Coordinates: \(i.getCoordinates())")
-        }
-        
-        contador++;
-        
-    }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tweets = provider.getTweets()
         hashtags = provider.getHashtags()
@@ -96,19 +78,6 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
         return cell
     }
     
-    func smartPlacesChange(places: [PlaceEntry]?, error: NSError?) {
-        for i in places!{
-            let coordinate : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: i.getLatitude()!, longitude: i.getLongitude()!)
-            radar.getNearlyPlaces(coordinate, callback: {() -> Void in
-                let candidatos: [CandidateLocation] = (self.radar.getVenues())
-                for i in candidatos{
-                    let twitter: String = i.getTwitter()
-                    self.provider.follow(twitter)
-                }
-                })
-        }
-    }
-
 
 }
 
