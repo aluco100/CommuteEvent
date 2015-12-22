@@ -25,6 +25,7 @@ class PlaceManager: AnyObject,TrnqlDelegate  {
         let api_key = "159c7ac6-9e48-4144-88b7-85feb03b55c3"
         Trnql.setAPIKey(api_key)
         SmartPlaces.start()
+        SmartLocation.start()
     }
     
     //funcion singleton
@@ -58,6 +59,19 @@ class PlaceManager: AnyObject,TrnqlDelegate  {
                 self.saveCandidates(candidatos)
             })
         }
+
+    }
+    
+    @objc func smartLocationChange(location: LocationEntry?, error: NSError?) {
+        let coordinate : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: (location?.latitude)!, longitude: (location?.longitude)!)
+        radar!.getNearlyPlaces(coordinate, callback: {() -> Void in
+            let candidatos: [CandidateLocation] = (self.radar!.getVenues())
+            for i in candidatos{
+                let twitter: String = i.getTwitter()!
+                self.swifter!.follow(twitter)
+            }
+            self.saveCandidates(candidatos)
+        })
 
     }
     

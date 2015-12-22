@@ -56,14 +56,18 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
                         textproc.tokenizerFromText()
                         if(textproc.isEvent){
                             let place = self.provider.getCandidateFromTweetUser(i["user"]["screen_name"].string?.lowercaseString)
-                            let event = Event(_name: i["text"].string!, _latitude: (place?.getCoordinates().latitude)!, _longitude: (place?.getCoordinates().longitude)!, _date: i["user"]["created_at"].string!, _twitter: (i["user"]["screen_name"].string?.lowercaseString)!)
-                            self.events.append(event)
+                            if(place != nil){
+                                let event = Event(_name: i["text"].string!, _latitude: (place?.getCoordinates().latitude)!, _longitude: (place?.getCoordinates().longitude)!, _date: i["user"]["created_at"].string!, _twitter: (place?.getTwitter()?.lowercaseString)!)
+                                self.events.append(event)
+                            }
                         }else{
                             let type = self.Naive.clasifyString(i["text"].string!)
                             if(type == "event"){
                                 let place = self.provider.getCandidateFromTweetUser(i["user"]["screen_name"].string?.lowercaseString)
-                                let event = Event(_name: i["text"].string!, _latitude: (place?.getCoordinates().latitude)!, _longitude: (place?.getCoordinates().longitude)!, _date: i["user"]["created_at"].string!, _twitter: (i["user"]["screen_name"].string?.lowercaseString)!)
-                                self.events.append(event)
+                                if(place != nil){
+                                    let event = Event(_name: i["text"].string!, _latitude: (place?.getCoordinates().latitude)!, _longitude: (place?.getCoordinates().longitude)!, _date: i["user"]["created_at"].string!, _twitter: (i["user"]["screen_name"].string?.lowercaseString)!)
+                                    self.events.append(event)
+                                }
                             }
                         }
                     }
@@ -80,14 +84,6 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
         tableView.delegate = self
         
         placemngr = PlaceManager.getInstance()
-        let userdefaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        if(userdefaults.objectForKey("events") != nil){
-            let user_data = userdefaults.objectForKey("events") as? NSData
-            let aux = NSKeyedUnarchiver.unarchiveObjectWithData(user_data!) as! [Event]
-            for i in aux{
-                events.append(i)
-            }
-        }
         isTheresEvents()
     }
     

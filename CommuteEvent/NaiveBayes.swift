@@ -26,8 +26,8 @@ class NaiveBayes {
         return instance!
     }
     
-    internal func clasifyString(str: String) -> String{
-        return self.classifier.classify(str)!
+    internal func clasifyString(str: String) -> String?{
+        return self.classifier.classify(str)
     }
     
     internal func categorizeString(str: String, category: String){
