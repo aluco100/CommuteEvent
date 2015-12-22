@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C29E3701BF5298F000EED3C /* Radar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C29E36F1BF5298F000EED3C /* Radar.swift */; };
 		0C37A98A1BF55E74003ECF75 /* PlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C37A9891BF55E74003ECF75 /* PlaceManager.swift */; };
+		0C4642961C2A05E3001C12D9 /* rsz_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C4642951C2A05E3001C12D9 /* rsz_icon.png */; };
 		0C46ADD61C28EB3500850F2E /* NaiveBayes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C46ADD51C28EB3500850F2E /* NaiveBayes.swift */; };
 		0C493E141C277670009D9B04 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C493E131C277670009D9B04 /* MapViewController.swift */; };
 		0C6188861BB78BF100571EE6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6188851BB78BF100571EE6 /* CoreLocation.framework */; };
@@ -110,6 +111,7 @@
 /* Begin PBXFileReference section */
 		0C29E36F1BF5298F000EED3C /* Radar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Radar.swift; sourceTree = "<group>"; };
 		0C37A9891BF55E74003ECF75 /* PlaceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceManager.swift; sourceTree = "<group>"; };
+		0C4642951C2A05E3001C12D9 /* rsz_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rsz_icon.png; sourceTree = SOURCE_ROOT; };
 		0C46ADD51C28EB3500850F2E /* NaiveBayes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaiveBayes.swift; sourceTree = "<group>"; };
 		0C493E131C277670009D9B04 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0C6188851BB78BF100571EE6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -236,6 +238,7 @@
 		0C7F50211BB4858A009EE477 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0C4642951C2A05E3001C12D9 /* rsz_icon.png */,
 				0C7A29771C248D8F00710722 /* rsz_places.png */,
 				0C7A29751C248B3000710722 /* rsz_event.png */,
 				0C7A296C1C247CD000710722 /* background.jpg */,
@@ -421,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C7F50291BB4858A009EE477 /* Main.storyboard in Resources */,
+				0C4642961C2A05E3001C12D9 /* rsz_icon.png in Resources */,
 				0C7A29781C248D8F00710722 /* rsz_places.png in Resources */,
 				0C7F502E1BB4858A009EE477 /* LaunchScreen.xib in Resources */,
 				0C7A296B1C24793D00710722 /* signinBack.jpg in Resources */,
