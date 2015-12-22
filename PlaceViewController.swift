@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import MapKit
 
 class PlaceViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var Alert: UILabel!
     @IBOutlet weak var Table: UITableView!
     var places: [CandidateLocation] = []
     override func viewDidLoad() {
@@ -29,6 +31,7 @@ class PlaceViewController: UIViewController,UITableViewDataSource, UITableViewDe
                 places.append(i)
             }
         }
+        isTheresPlaces()
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,5 +42,34 @@ class PlaceViewController: UIViewController,UITableViewDataSource, UITableViewDe
         let cell = self.Table.dequeueReusableCellWithIdentifier("placeCell")
         cell?.textLabel?.text = places[indexPath.row].getVenue()
         return cell!
+    }
+    
+    func isTheresPlaces()->Void{
+        if(self.places.count == 0){
+            self.Alert.hidden = false
+            Alert.text = "There's no places yet"
+        }else{
+            Alert.hidden = true
+        }
+    }
+
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "placeSegue"){
+            let indexPath = self.Table.indexPathForSelectedRow
+            let placeSelected = places[(indexPath?.row)!] 
+            let destination = segue.destinationViewController as? MapViewController
+            
+            let point : MKPointAnnotation = MKPointAnnotation()
+            point.coordinate = CLLocationCoordinate2D(latitude: placeSelected.getCoordinates().latitude, longitude: placeSelected.getCoordinates().longitude)
+            point.title = placeSelected.getVenue()
+            destination?.point = point
+            
+            //set the region
+            let span = MKCoordinateSpanMake(0.01, 0.01)
+            let region = MKCoordinateRegion(center: point.coordinate, span: span)
+            destination?.region = region
+            
+        }
     }
 }

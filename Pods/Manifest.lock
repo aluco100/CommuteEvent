@@ -1,8 +1,10 @@
 PODS:
+  - Parsimmon (0.5.0)
   - QuadratTouch (1.1.1)
   - trnql (1.5.1)
 
 DEPENDENCIES:
+  - Parsimmon (~> 0.5.0)
   - QuadratTouch (>= 1.0)
   - trnql (from `https://github.com/trnql/trnql_ios.git`)
 
@@ -16,6 +18,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/trnql/trnql_ios.git
 
 SPEC CHECKSUMS:
+  Parsimmon: db98d89de71c085dbc7e839f1296dc73cdeb94bb
   QuadratTouch: 296d83c63a4328f6f40af9fc728fe24f0e3b00d4
   trnql: 9bf48ed84292c4381dcc867758944c506139f32d
 

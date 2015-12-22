@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Parsimmon.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1AA7F305E1D4563483F437FA830DB678</key>
+		<key>658BC487D6CE03634BC8BBB7DFC23848</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F8C6283CF767EBD64FF4B041286A641E</key>
+		<key>715BF65BE5E6DD8924BE6009A07FB9DF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84BF6061967C41EA5E45DD3A9AE2ADC5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

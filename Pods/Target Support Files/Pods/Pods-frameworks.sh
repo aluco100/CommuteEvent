@@ -84,10 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods/Parsimmon.framework"
   install_framework "Pods/QuadratTouch.framework"
   install_framework "${PODS_ROOT}/trnql/Frameworks/trnql.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods/Parsimmon.framework"
   install_framework "Pods/QuadratTouch.framework"
   install_framework "${PODS_ROOT}/trnql/Frameworks/trnql.framework"
 fi

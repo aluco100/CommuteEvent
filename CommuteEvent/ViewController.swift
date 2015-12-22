@@ -6,6 +6,15 @@
 //  Copyright (c) 2015 Alfredo Luco. All rights reserved.
 //
 
+/*
+Falta por hacer:
+
+1.- obtener los tweets por text mining atribuyendoles un peso
+2.- verificar si efectivamente se localizan los lugares con trnql
+
+
+*/
+
 
 import UIKit
 import MapKit
@@ -27,7 +36,9 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
     var users:[String] = []
     var radar: Radar = Radar.getInstance()
     var placemngr: PlaceManager = PlaceManager.getInstance()
-    var places: [CandidateLocation] = []
+    var events: [Event] = []
+    var Naive = NaiveBayes.getInstance()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //autorizar Twitter
@@ -38,7 +49,24 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
                 self.placemngr = PlaceManager.getInstance()
                 self.provider.getHomeTimeline({
                     (tweets: [JSONValue], error: NSError?) -> Void in
-                    
+                    //capturar eventos segun tweets
+                    for i in tweets{
+                        print(i)
+                        let textproc = TextProcessor(text: i["text"].string!)
+                        textproc.tokenizerFromText()
+                        if(textproc.isEvent){
+                            let place = self.provider.getCandidateFromTweetUser(i["user"]["screen_name"].string?.lowercaseString)
+                            let event = Event(_name: i["text"].string!, _latitude: (place?.getCoordinates().latitude)!, _longitude: (place?.getCoordinates().longitude)!, _date: i["user"]["created_at"].string!, _twitter: (i["user"]["screen_name"].string?.lowercaseString)!)
+                            self.events.append(event)
+                        }else{
+                            let type = self.Naive.clasifyString(i["text"].string!)
+                            if(type == "event"){
+                                let place = self.provider.getCandidateFromTweetUser(i["user"]["screen_name"].string?.lowercaseString)
+                                let event = Event(_name: i["text"].string!, _latitude: (place?.getCoordinates().latitude)!, _longitude: (place?.getCoordinates().longitude)!, _date: i["user"]["created_at"].string!, _twitter: (i["user"]["screen_name"].string?.lowercaseString)!)
+                                self.events.append(event)
+                            }
+                        }
+                    }
                 })
             }else {
                 print("error viewDidLoad: \(error)")
@@ -53,15 +81,14 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
         
         placemngr = PlaceManager.getInstance()
         let userdefaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        if(userdefaults.objectForKey("candidates") != nil){
-            let user_data = userdefaults.objectForKey("candidates") as? NSData
-            let aux = NSKeyedUnarchiver.unarchiveObjectWithData(user_data!) as! [CandidateLocation]
+        if(userdefaults.objectForKey("events") != nil){
+            let user_data = userdefaults.objectForKey("events") as? NSData
+            let aux = NSKeyedUnarchiver.unarchiveObjectWithData(user_data!) as! [Event]
             for i in aux{
-                print("candidate twitter: \(i.getTwitter())")
-                places.append(i)
+                events.append(i)
             }
         }
-        isTheresPlaces()
+        isTheresEvents()
     }
     
     func onTweetsReload(tweets: [JSONValue]) -> Void{
@@ -76,8 +103,8 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
         users = provider.getUsers()
         //return hashtags.count
         //return tweets.count
-        isTheresPlaces()
-        return places.count
+        isTheresEvents()
+        return events.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -86,16 +113,37 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UITableViewData
         //cell.textLabel?.text = hashtags[indexPath.row]
         //cell.textLabel?.text = tweets[indexPath.row]["text"].string
         //cell.textLabel?.text = users[indexPath.row]
-        cell.textLabel?.text = places[indexPath.row].getVenue()
+        cell.textLabel?.text = events[indexPath.row].getName()
         return cell
     }
     
-    func isTheresPlaces()->Void{
-        if(self.places.count == 0){
+    func isTheresEvents()->Void{
+        if(self.events.count == 0){
             Alert.hidden = false
-            Alert.text = "There's no places yet"
+            Alert.text = "There's no events yet"
         }else{
             Alert.hidden = true
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "eventSegue"){
+            let indexPath = self.tableView.indexPathForSelectedRow
+            let selectedEvent = events[(indexPath?.row)!]
+            let place: CandidateLocation? = self.provider.getCandidateFromTweetUser(selectedEvent.getTwitter().lowercaseString)
+            let destination = segue.destinationViewController as? MapViewController
+            if(place != nil){
+                let point : MKPointAnnotation = MKPointAnnotation()
+                point.coordinate = CLLocationCoordinate2D(latitude: place!.getCoordinates().latitude, longitude: place!.getCoordinates().longitude)
+                point.title = place!.getVenue()
+                destination?.point = point
+                
+                //set the region
+                let span = MKCoordinateSpanMake(0.01, 0.01)
+                let region = MKCoordinateRegion(center: point.coordinate, span: span)
+                destination?.region = region
+            }
+            
         }
     }
     

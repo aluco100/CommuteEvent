@@ -12,6 +12,7 @@ import Foundation
 import SwifteriOS
 import SafariServices
 import UIKit
+import Parsimmon
 
 class Provider{
     private var swifter: Swifter

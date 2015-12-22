@@ -52,7 +52,7 @@ class PlaceManager: AnyObject,TrnqlDelegate  {
             radar!.getNearlyPlaces(coordinate, callback: {() -> Void in
                 let candidatos: [CandidateLocation] = (self.radar!.getVenues())
                 for i in candidatos{
-                    let twitter: String = i.getTwitter()
+                    let twitter: String = i.getTwitter()!
                     self.swifter!.follow(twitter)
                 }
                 self.saveCandidates(candidatos)
